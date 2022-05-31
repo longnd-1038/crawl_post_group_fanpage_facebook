@@ -35,3 +35,7 @@ passWord = 'GtT71qOMzwgLJVe'
 twoFa= 'RTWF2XYGJDDQV2F2EPBTFHCZV4DDMP2N'
 ```
 
+**Run code**
+```
+python3 crawl.py
+```
