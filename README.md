@@ -1,6 +1,6 @@
 # Crawl post group fanpage facebook
 - Prepare clone facebook that turned on 2FA  https://www.dienmayxanh.com/kinh-nghiem-hay/2fa-la-gi-cach-su-dung-2fa-tren-facebook-ma-khong-1254838
-- **Precondition** : Installed python3 và pip3 
+- **Precondition** : Installed python3  pip3 
 
 -  **Step 1**  - Install Selenium + pyotp
 ```
