@@ -9,14 +9,12 @@ from time import sleep
 import pyotp
 
 # Đoạn script này dùng để khởi tạo 1 chrome profile
-def initDriverProfile(profile):
+def initDriverProfile():
     CHROMEDRIVER_PATH = '/usr/bin/chromedriver'
     WINDOW_SIZE = "1000,2000"
     chrome_options = Options()
     # chrome_options.add_argument("--headless")
     chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
-    chrome_options.add_argument(
-        "user-data-dir=/home/dinhlongit/.config/google-chrome/" + str(profile))  # Path to your chrome profile
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('disable-infobars')
     chrome_options.add_argument('--disable-gpu') if os.name == 'nt' else None  # Windows workaround
@@ -125,8 +123,8 @@ def writeFileTxt(fileName, content):
         f1.write(content + os.linesep)
 
 def getPostsGroup(driver, idGroup, numberId):
+    joinGroup(driver, idGroup)
     try:
-        joinGroup(driver, idGroup)
         driver.get('https://mbasic.facebook.com/groups/' + str(idGroup))
         file_exists = os.path.exists(fileIds)
         if (not file_exists):
@@ -237,8 +235,11 @@ def joinGroup(driver, idGoup):
                     sleep(1)
                     el.send_keys("oki admin ")
             sleep(1)
-            driver.find_elements_by_css_selector("#group-membership-criteria-answer-form > div > div > input")[0].click()
-            sleep(1)
+            btnSubmit = driver.find_elements_by_css_selector("#group-membership-criteria-answer-form > div > div > input")
+
+            if (len(btnSubmit)):
+                btnSubmit[0].click()
+                sleep(1)
         else:
             print("joined")
     except:
@@ -272,12 +273,12 @@ def crawlPostData(driver, postIds, type = 'page'):
             print("crawl fail")
 
 
-driver = initDriverProfile("profile")
+driver = initDriverProfile()
 isLogin = checkLiveClone(driver)  # Check live
 print(isLogin)
-userName = '100054522522135'
-passWord = 'GtT71qOMzwgLJVe'
-twoFa= 'RTWF2XYGJDDQV2F2EPBTFHCZV4DDMP2N'
+userName = '100054222522135'
+passWord = 'GtT71qOMzwgLJV1e'
+twoFa= 'RTWF2XYGJDDQV2F2EPBTF1HCZV4DDMP2N'
 
 if (isLogin == False):
     loginBy2FA(driver, userName, passWord, twoFa)
