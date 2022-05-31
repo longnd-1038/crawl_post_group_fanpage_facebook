@@ -153,7 +153,7 @@ def getPostsGroup(driver, idGroup, numberId):
 
 def clonePostContent(driver, postId = "1902017913316274"):
     try:
-        driver.get("https://m.facebook.com/" + str(postId))
+        driver.get("https://mbasic.facebook.com/" + str(postId))
         parrentImage = driver.find_elements_by_xpath("//div[@data-gt='{\"tn\":\"E\"}']")
         if (len(parrentImage) == 0):
             parrentImage = driver.find_elements_by_xpath("//div[@data-ft='{\"tn\":\"E\"}']")
@@ -276,8 +276,8 @@ def crawlPostData(driver, postIds, type = 'page'):
 driver = initDriverProfile()
 isLogin = checkLiveClone(driver)  # Check live
 print(isLogin)
-userName = '100054222522135'
-passWord = 'GtT71qOMzwgLJV1e'
+userName = '100015012581501'
+passWord = 'nguyenden123@'
 twoFa= 'RTWF2XYGJDDQV2F2EPBTF1HCZV4DDMP2N'
 
 if (isLogin == False):
