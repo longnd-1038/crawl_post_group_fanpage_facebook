@@ -1,4 +1,9 @@
 # Crawl post group fanpage facebook
+
+# Required:
+## python3.6.9
+## selenium 3.141.0
+
 ![2b15d33c-738d-468a-bf02-d8e4ecd40080](https://user-images.githubusercontent.com/68221273/171086930-cf9a1f96-50fa-48a6-b636-9fa1baee26d7.gif)
 
 - Prepare clone facebook that turned on 2FA  https://www.dienmayxanh.com/kinh-nghiem-hay/2fa-la-gi-cach-su-dung-2fa-tren-facebook-ma-khong-1254838
